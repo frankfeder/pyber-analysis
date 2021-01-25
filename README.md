@@ -13,7 +13,7 @@ Below is a summary dataframe created using all provided data:
 ![](./Resources/typeSummaries.png)
 
 ### Differences in Total Rides and Drivers
-Looking at the difference in the first two columns (Total Rides, Total Drivers) we can immediately see that our three regions represent very different amounts of our total logged rides. Urban rides make up a large majority of all rides (over 68%!) while rural rides only make up about about 5% of app uses. The total drivers statistics are similarly skewed towards the urban region, with 80% of all drivers being in Urban regions. You might think: "that makes sense, there's a bigger demand for rides in the city, so the supply of drivers will scale accordingly" - but the data tells a more complex story.
+Looking at the difference in the first two columns (Total Rides, Total Drivers) we can immediately see that our three regions represent very different amounts of our total logged rides. Urban rides make up a large majority of all rides (over 68%!) while rural rides only make up about about 5% of app uses. The total drivers statistics are similarly skewed towards the urban region, with 80% of all drivers being in Urban regions.
 
 ### Differences in the ratio of Rides to Drivers
 In urban areas, there are more drivers than total rides - this suggests that many of our registered drivers did not drive for any of the rides within the data's timeframe (the first few months of 2019). Let's compare that to the ratio of rides and drivers for the rural and suburban regions: less drivers than total rides means that at least one (likely, many) of our rural and suburban drivers performed multiple rides within the logged data.
@@ -27,7 +27,7 @@ As we might expect, Average Fare per Ride is highest for rides in rural regions,
 The skew of Average Fare per Driver across these three regions tracks the largest differences we've touched on. Since there are more drivers working less expensive rides in urban areas, the average fare per driver is lower in those areas. Since there are less drivers working more expensive rides in rural areas, the average fare per driver is significantly higher there (by more than 3x!). 
 
 ## Checks Before Visualizing
-This analysis has been tasked with visualizing data from Jan 1 2019 - April 29 2019. To make sure we can "sanity check" our visualization for this period against our summary stats for the entire dataset, we'll quickly see how much of the data we'll exclude by filtering into the given date range. 
+This analysis has been tasked with visualizing data from Jan 1 2019 - April 29 2019. To make sure we can present our visualization for this period alongside our summary stats for the entire dataset, we'll take a moment to check how much of the data we'll exclude by filtering into the given date range. 
 
 ```
 # Check if there is data outside of specified range (Jan 1 2019 : April 29 2019)
