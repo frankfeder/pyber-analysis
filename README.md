@@ -76,9 +76,9 @@ It looks like our overall revenue heirarchy holds true in any week within the pr
 It's important to note that ```resample("W")``` tracks weeks as starting on Sunday by default. This fact has implications that could affect this observation:
 January 1, 2019 was a Tuesday - that means that the first data point for all lines is missing 2 out of the 7 days of the week (Sunday and Monday) that are normally included in the weekly total, which could explain why those points are relatively low for Urban and Suburban regions.
 
-2. **There is an uptick in all regions between the third and fourth week in February.**
+2. **There is an uptick in all regions between the third and fourth week in February**
 
-My first thought was that somehow Valentine's Day rides had been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday I found that falls within that fourth week (Feb 17-23) is President's Day, which is not a holiday I would expect to be big revenue day for a ridesharing app - at least, not more than Valentine's Day.  
+My first thought was that somehow Valentine's Day rides had been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday that falls within that fourth week (Feb 17-23) seems to be President's Day, which is not a holiday we might expect to be big revenue day for a ridesharing app - at least, not more than Valentine's Day. We'll include this "President's Day Spike" mystery in our report summary..
 
 ## Summary
 The following recommendations are based on the results described above:
