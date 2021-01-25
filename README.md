@@ -70,7 +70,7 @@ Now that we have established that our visualization can be fairly compared to ou
 
 ![](./Analysis/PyBer_fare_summary.png.png)
 
-It looks like our overall revenue heirarchy holds true in any week within the provided data: Urban regions are PyBer's biggest earners, then Suburban, then Rural. While this is too little data to draw causality from, there are two trends present that we can observe:
+It looks like our overall revenue heirarchy holds true in any week within the provided data: Urban regions are PyBer's biggest earners, then Suburban, then Rural. There are two trends present that we can observe:
 1. **There is an uptick for Urban and Suburban regions between the first and second week of January**
 
 It's important to note that ```resample("W")``` tracks weeks as starting on Sunday by default. This fact has implications that could affect this observation:
@@ -78,7 +78,7 @@ January 1, 2019 was a Tuesday - that means that the first data point for all lin
 
 2. **There is an uptick in all regions between the third and fourth week in February**
 
-An easy first-glance opinion could be that somehow Valentine's Day rides has been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday that falls within that fourth week (Feb 17-23) seems to be President's Day, which is not a holiday we might expect to be big revenue day for a ridesharing app - at least, not more than Valentine's Day. We'll include this "President's Day Spike" mystery in our report summary.
+An easy first-glance opinion could be that somehow Valentine's Day rides has been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday that falls within that fourth week (Feb 17-23) seems to be President's Day, which is not a holiday we might expect to be big revenue day for a ridesharing app... at least, not more than Valentine's Day. We'll include this "President's Day Spike" mystery in our summary below.
 
 ## Summary
 The following recommendations are based on the results described above:
@@ -87,10 +87,8 @@ The following recommendations are based on the results described above:
 
 2. Related to #1, recommend further analysis to identify driver categories. It's possible that a small amount of drivers are responsible for a majority of performed rides, or that many drivers do one ride and then delete the app.
 
-3. Recommend creating box-and-whiskers visualizations (or otherwise conducting outlier analysis) for the data falling outside the visualized period to confirm that there aren't erroneous outliers skewing the summary stats in a way that would inhibit our ability to use the visualization and the summary stats together in making business decisions.
+3. Recommend a similar visualizaton focusing on change in Average Fare by week per region, instead of total fare. Could be helpful to display both on the same graph, using two different y-axes.
 
-4. Recommend a similar visualizaton focusing on change in Average Fare by week per region, instead of total fare. Could be helpful to display both on the same graph, using two different y-axes.
+4. Recommend redoing visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
 
-5. Recommend redoing visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
-
-6. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter across all regions, and identifing the cause may suggest opporunities to improve revenue during the rest of the year.
+5. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter across all regions, and identifing the cause may suggest opporunities to improve revenue during the rest of the year.
