@@ -59,9 +59,9 @@ As expected, most of the data we used to create the summary dataframe is within 
 ```
 Jan 1 to April 29: 118 days
 Jan 1 to May 8: 127 days
-% of days not visualized: ~7.31%
+% of days not visualized: ~7.09%
 ```
-Almost exactly the same! To reiterate what we've just checked, the percentage of records that we're not including in our visualization is roughly equal to the percentage of days we're not including.
+Very close to what we expected! To reiterate what we've just checked, the percentage of records that we're not including in our visualization is roughly equal to the percentage of days we're not including.
 
 There is still the possibility that an outlier we wouldn't see in the visualization could be skewing our summary results. Consider that a record could exist on May 2 2019, where a rural fare was logged as "$3645.00" instead of "$36.45". This would not have been detected by the previous tests, and would skew the rural summary heavily due to how few records are being grouped in that category.
 
