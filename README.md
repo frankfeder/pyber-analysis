@@ -83,7 +83,7 @@ My first thought was that somehow Valentine's Day rides had been counted in the 
 ## Summary
 The following recommendations are based on the results described above:
 
-1. There is evidence that the counts of drivers per city includes drivers that did not perform any rides over the given period. Recommend getting a more accurate count of "active drivers" to enhance usefulness of Average Fare per Driver statistics.
+1. Recommend getting a more accurate count of "active drivers" to enhance usefulness of Average Fare per Driver statistics. There is evidence that the counts of drivers per city includes drivers that did not perform any rides over the given period. 
 
 2. Related to #1, recommend further analysis to identify driver categories. It's possible that a small amount of drivers are responsible for a majority of performed rides, or that many drivers do one ride and then delete the app.
 
@@ -91,6 +91,6 @@ The following recommendations are based on the results described above:
 
 4. Recommend a similar visualizaton focusing on change in Average Fare by week per region, instead of total fare. Could be helpful to display both on the same graph, using two different y-axes.
 
-5. Redo visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
+5. Recommend redoing visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
 
 6. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter, and identifing the cause may suggest opporunities to enhance revenue during the rest of the year.
