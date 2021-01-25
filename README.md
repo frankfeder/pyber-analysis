@@ -19,7 +19,7 @@ Looking at the difference in the first two columns (Total Rides, Total Drivers) 
 In urban areas, there are more drivers than total rides - this suggests that many of our registered drivers did not drive for any of the rides within the data's timeframe (the first few months of 2019). Let's compare that to the ratio of rides and drivers for the rural and suburban regions: less drivers than total rides means that at least one (likely, many) of our rural and suburban drivers performed multiple rides within the logged data.
 
 ### Differences in Fare per Ride
-As we might expect, Average Fare per Ride is highest for rides in rural regions, lower for suburban and lowest for urban regions. Assuming that fare pricing is a function of "distance" and "rate per mile", this analyst suggests two potential factors, although there's not enough data here to assert causality: 
+As we might expect, Average Fare per Ride is highest for rides in rural regions, lower for suburban and lowest for urban regions. Assuming that fare pricing is a function of "distance" and "rate per mile", this suggests two potential factors, although there's not enough data here to assert causality: 
 1. (Distance) Rural communities are often spaced out over a larger distance to facilitate farmland, so rides in rural regions could average longer by distance/time than urban rides; or
 2. (Rate per Mile) There may be less competition for PyBer in rural communities, and perhaps Pyber uses a smart algorithm to raise fare rates by location type
 
