@@ -26,7 +26,7 @@ As we might expect, Average Fare per Ride is highest for rides in rural regions,
 ### Differences in Fare per Driver
 The skew of Average Fare per Driver across these three regions tracks the largest differences we've touched on. Since there are more drivers working less expensive rides in urban areas, the average fare per driver is lower in those areas. Since there are less drivers working more expensive rides in rural areas, the average fare per driver is significantly higher there (by more than 3x!). 
 
-### Checks Before Visualizing
+## Checks Before Visualizing
 This analysis has been tasked with visualizing data from Jan 1 2019 - April 29 2019. To make sure we can "sanity check" our visualization for this period against our summary stats for the entire dataset, we'll quickly see how much of the data we'll exclude by filtering into the given date range. 
 
 ```
@@ -65,7 +65,7 @@ Almost exactly the same! To reiterate what we've just checked, the percentage of
 
 There is still the possibility that an outlier we wouldn't see in the visualization could be skewing our summary results: consider that a record could exist from May 2 2019, where a rural fare was logged as "$3645.00" instead of "$36.45". This would not have been detected by the previous tests, and would skew the rural summary heavily due to how few records are being grouped in that category.
 
-### Visualizing Differences in Regional Revenue Over Time
+## Visualizing Differences in Regional Revenue Over Time
 Now that we have established that our visualization can be fairly compared to our summary statistics, let's take a look:
 
 ![](./Analysis/PyBer_fare_summary.png.png)
