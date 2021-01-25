@@ -63,7 +63,7 @@ Jan 1 to May 8: 127 days
 ```
 Almost exactly the same! To reiterate what we've just checked, the percentage of records that we're not including in our visualization is roughly equal to the percentage of days we're not including.
 
-There is still the possibility that an outlier we wouldn't see in the visualization could be skewing our summary results: consider that a record could exist from May 2 2019, where a rural fare was logged as "$3645.00" instead of "$36.45". This would not have been detected by the previous tests, and would skew the rural summary heavily due to how few records are being grouped in that category.
+There is still the possibility that an outlier we wouldn't see in the visualization could be skewing our summary results. Consider that a record could exist on May 2 2019, where a rural fare was logged as "$3645.00" instead of "$36.45". This would not have been detected by the previous tests, and would skew the rural summary heavily due to how few records are being grouped in that category.
 
 ## Visualizing Differences in Regional Revenue Over Time
 Now that we have established that our visualization can be fairly compared to our summary statistics, let's take a look:
@@ -78,7 +78,7 @@ January 1, 2019 was a Tuesday - that means that the first data point for all lin
 
 2. **There is an uptick in all regions between the third and fourth week in February**
 
-My first thought was that somehow Valentine's Day rides had been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday that falls within that fourth week (Feb 17-23) seems to be President's Day, which is not a holiday we might expect to be big revenue day for a ridesharing app - at least, not more than Valentine's Day. We'll include this "President's Day Spike" mystery in our report summary..
+An easy first-glance opinion could be that somehow Valentine's Day rides has been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday that falls within that fourth week (Feb 17-23) seems to be President's Day, which is not a holiday we might expect to be big revenue day for a ridesharing app - at least, not more than Valentine's Day. We'll include this "President's Day Spike" mystery in our report summary.
 
 ## Summary
 The following recommendations are based on the results described above:
@@ -93,4 +93,4 @@ The following recommendations are based on the results described above:
 
 5. Recommend redoing visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
 
-6. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter, and identifing the cause may suggest opporunities to enhance revenue during the rest of the year.
+6. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter across all regions, and identifing the cause may suggest opporunities to improve revenue during the rest of the year.
