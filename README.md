@@ -19,7 +19,7 @@ Looking at the difference in the first two columns (Total Rides, Total Drivers) 
 In urban areas, there are more drivers than total rides - this suggests that many of our registered drivers did not drive for any of the rides within the data's timeframe (the first few months of 2019). Let's compare that to the ratio of rides and drivers for the rural and suburban regions: less drivers than total rides means that at least one (likely, many) of our rural and suburban drivers performed multiple rides within the logged data.
 
 ### Differences in Fare per Ride
-As we might expect, Average Fare per Ride is highest for rides in rural regions, lower for suburban and lowest for urban regions. Assuming that fare pricing is a function of "distance" and "rate per mile", thisanalyst suggests two potential factors, although there's not enough data here to assert causality: 
+As we might expect, Average Fare per Ride is highest for rides in rural regions, lower for suburban and lowest for urban regions. Assuming that fare pricing is a function of "distance" and "rate per mile", this analyst suggests two potential factors, although there's not enough data here to assert causality: 
 1. (Distance) Rural communities are often spaced out over a larger distance to facilitate farmland, so rides in rural regions could average longer by distance/time than urban rides; or
 2. (Rate per Mile) There may be less competition for PyBer in rural communities, and perhaps Pyber uses a smart algorithm to raise fare rates by location type
 
@@ -27,7 +27,7 @@ As we might expect, Average Fare per Ride is highest for rides in rural regions,
 The skew of Average Fare per Driver across these three regions tracks the largest differences we've touched on. Since there are more drivers working less expensive rides in urban areas, the average fare per driver is lower in those areas. Since there are less drivers working more expensive rides in rural areas, the average fare per driver is significantly higher there (by more than 3x!). 
 
 ### Checks Before Visualizing
-This analysis has been tasked with visualizing data from Jan 1 2019 - April 29 2012. To make sure we can "sanity check" our visualization for this period against our summary stats for the entire dataset, we'll quickly see how much of the data we'll exclude by filtering into the given date range. 
+This analysis has been tasked with visualizing data from Jan 1 2019 - April 29 2019. To make sure we can "sanity check" our visualization for this period against our summary stats for the entire dataset, we'll quickly see how much of the data we'll exclude by filtering into the given date range. 
 
 ```
 # Check if there is data outside of specified range (Jan 1 2019 : April 29 2019)
@@ -71,18 +71,26 @@ Now that we have established that our visualization can be fairly compared to ou
 ![](./Analysis/PyBer_fare_summary.png.png)
 
 It looks like our overall revenue heirarchy holds true in any week within the provided data: Urban regions are PyBer's biggest earners, then Suburban, then Rural. While this is too little data to draw causality from, there are two trends present that we can observe:
-1. *There is an uptick for Urban and Suburban regions between the first and second week of January*
+1. **There is an uptick for Urban and Suburban regions between the first and second week of January**
+
 It's important to note that ```resample("W")``` tracks weeks as starting on Sunday by default. This fact has implications that could affect this observation:
 January 1, 2019 was a Tuesday - that means that the first data point for all lines is missing 2 out of the 7 days of the week (Sunday and Monday) that are normally included in the weekly total, which could explain why those points are relatively low for Urban and Suburban regions.
 
-2. *There is an uptick in all regions between the third and fourth week in February.*
+2. **There is an uptick in all regions between the third and fourth week in February.**
+
 My first thought was that somehow Valentine's Day rides had been counted in the fourth week of February, but not even the resample() oddity described above could have shifted the weeks that much. The only major holiday I found that falls within that fourth week (Feb 17-23) is President's Day, which is not a holiday I would expect to be big revenue day for a ridesharing app - at least, not more than Valentine's Day.  
 
 ## Summary
 The following recommendations are based on the results described above:
+
     1. There is evidence that the counts of drivers per city includes drivers that did not perform any rides over the given period. Recommend getting a more accurate count of "active drivers" to enhance usefulness of Average Fare per Driver statistics.
+
     2. Related to #1, recommend further analysis to identify driver categories. It's possible that a small amount of drivers are responsible for a majority of performed rides, or that many drivers do one ride and then delete the app.
-    2. Recommend creating box-and-whiskers visualizations (or otherwise conducting outlier analysis) for the data falling outside the visualized period to confirm that there aren't erroneous outliers skewing the summary stats in a way that would inhibit our ability to use the visualization and the summary stats together in making business decisions.
-    3. Recommend a similar visualizaton focusing on change in Average Fare by week per region, instead of total fare. Could be helpful to display both on the same graph, using two different y-axes.
-    4. Redo visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
-    5. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter, and identifing the cause may suggest opporunities to enhance revenue during the rest of the year.
+
+    3. Recommend creating box-and-whiskers visualizations (or otherwise conducting outlier analysis) for the data falling outside the visualized period to confirm that there aren't erroneous outliers skewing the summary stats in a way that would inhibit our ability to use the visualization and the summary stats together in making business decisions.
+
+    4. Recommend a similar visualizaton focusing on change in Average Fare by week per region, instead of total fare. Could be helpful to display both on the same graph, using two different y-axes.
+
+    5. Redo visualization using ```resample("W-TUE")```, to make sure the first data point shown in the visualization isn't misleading. 
+
+    6. Recommend further investigation into the "President's Day Spike". This is one of our highest-earning weeks of the first quarter, and identifing the cause may suggest opporunities to enhance revenue during the rest of the year.
